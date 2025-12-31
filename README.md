@@ -7,7 +7,6 @@ A simple C-based preprocessor for handling `#define` and `#undef` directives.
 - Process `#undef` directives to remove definitions
 - Replace macro identifiers with their definitions
 - Hash table implementation for efficient storage
-- Multi-line input support
 
 ## Build and Run
 ```bash
