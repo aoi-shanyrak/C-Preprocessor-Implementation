@@ -1,7 +1,7 @@
 
 int main() {
-  int array[MAX];
-  float area = PI * SQUARE(5);
+  int array[100];
+  float area = 3.14159 * SQUARE(5);
 
 #ifdef DEBUG
   printf("Area: %f\n", area);

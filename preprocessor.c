@@ -113,7 +113,7 @@ int isidentchar(int c) {
 
 void handle_define(char* line) {
   char name[256], defn[1024];
-  int i = 6; // skip define
+  int i = 7; // skip define
 
   while (isspace(line[i]))
     i++;
@@ -193,6 +193,14 @@ int main(int argc, char* argv[]) {
     }
     if (strncmp(&line[i], "#undef", 6) == 0 && isspace(line[i + 6])) {
       handle_undef(&line[i]);
+      continue;
+    }
+    if (strncmp(&line[i], "#ifndef", 7) == 0 ||
+        strncmp(&line[i], "#ifdef", 6) == 0 ||
+        strncmp(&line[i], "#endif", 6) == 0 ||
+        strncmp(&line[i], "#else", 5) == 0 ||
+        strncmp(&line[i], "#elif", 5) == 0) {
+      printf("%s", line);
       continue;
     }
     process_line(line);
